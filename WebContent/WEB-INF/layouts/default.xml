@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+
+<tiles-definitions>
+	<definition name="forum.base" template="/WEB-INF/templates/default.jsp">
+		<put-attribute name="includes" value=""></put-attribute>
+		<put-attribute name="title" value="Catfish Homepage"></put-attribute>
+		<put-attribute name="header" value="/WEB-INF/tiles/header.jsp"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/content.jsp"></put-attribute>
+		<put-attribute name="footer" value="/WEB-INF/tiles/footer.jsp"></put-attribute>
+	</definition>
+
+	<definition name="home" extends="forum.base">
+		<put-attribute name="title" value="Catfish Homepage"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/home.jsp"></put-attribute>
+	</definition>
+
+	<definition name="forum" extends="forum.base">
+		<put-attribute name="title" value="Current Forums"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/forum.jsp"></put-attribute>
+	</definition>
+
+	<definition name="login" extends="forum.base">
+		<put-attribute name="title" value="Login"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/login.jsp"></put-attribute>
+	</definition>
+
+	<definition name="newaccount" extends="forum.base">
+		<put-attribute name="includes"
+			value="/WEB-INF/tiles/newaccountscript.jsp"></put-attribute>
+		<put-attribute name="title" value="Create Account"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/newaccount.jsp"></put-attribute>
+	</definition>
+
+	<definition name="loggedout" extends="forum.base">
+		<put-attribute name="title" value="Logged Out"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/loggedout.jsp"></put-attribute>
+	</definition>
+
+	<definition name="catfishform" extends="forum.base">
+		<put-attribute name="title" value="Catfish Form"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/catfishform.jsp"></put-attribute>
+	</definition>
+
+	<definition name="forumcreated" extends="forum.base">
+		<put-attribute name="title" value="Forum Created"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/forumcreated.jsp"></put-attribute>
+	</definition>
+
+	<definition name="accountcreated" extends="forum.base">
+		<put-attribute name="title" value="Account Created"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/accountcreated.jsp"></put-attribute>
+	</definition>
+
+	<definition name="admin" extends="forum.base">
+		<put-attribute name="title" value="Admin"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/admin.jsp"></put-attribute>
+	</definition>
+
+	<definition name="createforum" extends="forum.base">
+		<put-attribute name="title" value="Create Forum"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/createforum.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="denied" extends="forum.base">
+		<put-attribute name="title" value="Denied"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/denied.jsp"></put-attribute>
+	</definition>
+
+	<definition name="error" extends="forum.base">
+		<put-attribute name="title" value="Error"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/error.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="catfishreport" extends="forum.base">
+		<put-attribute name="title" value="Catfish Report"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/catfishreport.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="singleforum" extends="forum.base">
+		<put-attribute name="title" value="Forum"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/singleforum.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="catfishimage" extends="forum.base">
+		<put-attribute name="title" value="Catfish Image Upload"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/catfishimage.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="catfishreverseimage" extends="forum.base">
+		<put-attribute name="title" value="Catfish Reverse Image"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/catfishreverseimage.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="profile" extends="forum.base">
+		<put-attribute name="title" value="Profile"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/profile.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="userprofile" extends="forum.base">
+		<put-attribute name="title" value="User Profile"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/userprofile.jsp"></put-attribute>
+	</definition>
+
+
+</tiles-definitions>

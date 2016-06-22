@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:security="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.1.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<security:authentication-manager>
+		<security:authentication-provider>
+			<security:jdbc-user-service
+				data-source-ref="dataSource"
+				users-by-username-query='select username,password,enabled from user where binary username = ?'
+				authorities-by-username-query='select username, authority from user where binary username = ?'
+				id="jdbcUserService" />
+			<security:password-encoder ref="passwordEncoder"></security:password-encoder>
+		</security:authentication-provider>
+	</security:authentication-manager>
+
+	<security:http use-expressions="true">
+		<security:intercept-url pattern="/admin"
+			access="hasRole('ROLE_ADMIN')" />
+		<security:intercept-url pattern="/deleteComment/**"
+			access="hasRole('ROLE_ADMIN')" />
+		<security:intercept-url pattern="/disableUser/**"
+			access="hasRole('ROLE_ADMIN')" />
+		<security:intercept-url pattern="/enableUser/**"
+			access="hasRole('ROLE_ADMIN')" />
+
+		<security:intercept-url pattern="/createforum"
+			access="isAuthenticated()" />
+		<security:intercept-url pattern="/catfishreport"
+			access="isAuthenticated()" />
+		<security:intercept-url pattern="/docreate"
+			access="isAuthenticated()" />
+		<security:intercept-url pattern="/forumcreated"
+			access="isAuthenticated()" />
+		<security:intercept-url pattern="/catfishform"
+			access="isAuthenticated()" />
+		<security:intercept-url pattern="/catfishimage"
+			access="isAuthenticated()" />
+		<security:intercept-url pattern="/catfishreverseimage"
+			access="isAuthenticated()" />
+		<security:intercept-url pattern="/docreateComment/*"
+			access="isAuthenticated()" />
+		<security:intercept-url pattern="/reply/**"
+			access="isAuthenticated()" />
+		<security:intercept-url pattern="/addLike/**"
+			access="isAuthenticated()" />
+		<security:intercept-url pattern="/addUnlike/**"
+			access="isAuthenticated()" />
+		<security:intercept-url pattern="/addReplyLike/**"
+			access="isAuthenticated()" />
+		<security:intercept-url pattern="/addReplyUnlike/**"
+			access="isAuthenticated()" />
+		<security:intercept-url pattern="/likes/**"
+			access="isAuthenticated()" />
+		<security:intercept-url pattern="/addForumLike/**"
+			access="isAuthenticated()" />
+		<security:intercept-url pattern="/addForumUnlike/**"
+			access="isAuthenticated()" />
+		<security:intercept-url pattern="/profile/**"
+			access="isAuthenticated()" />
+		<security:intercept-url pattern="/updateProfilePic/**"
+			access="isAuthenticated()" />
+		<security:intercept-url pattern="/updateFirstName/**"
+			access="isAuthenticated()" />
+		<security:intercept-url pattern="/updateLastName/**"
+			access="isAuthenticated()" />
+		<security:intercept-url pattern="/updateDob/**"
+			access="isAuthenticated()" />
+		<security:intercept-url pattern="/updateGender/**"
+			access="isAuthenticated()" />
+		<security:intercept-url pattern="/updateAbout/**"
+			access="isAuthenticated()" />
+		<security:intercept-url pattern="/updatePassword/**"
+			access="isAuthenticated()" />	
+			<security:intercept-url pattern="/userprofile/**"
+			access="isAuthenticated()" />	
+
+
+		<security:intercept-url pattern="/" access="permitAll" />
+		<security:intercept-url pattern="/denied"
+			access="permitAll" />
+		<security:intercept-url pattern="/loggedout"
+			access="permitAll" />
+		<security:intercept-url pattern="/newaccount"
+			access="permitAll" />
+		<security:intercept-url pattern="/createaccount"
+			access="permitAll" />
+		<security:intercept-url pattern="/accountcreated"
+			access="permitAll" />
+		<security:intercept-url pattern="/static/**"
+			access="permitAll" />
+		<security:intercept-url pattern="/login"
+			access="permitAll" />
+		<security:intercept-url pattern="/forum"
+			access="permitAll" />
+		<security:intercept-url pattern="/forum/*"
+			access="permitAll" />
+		<security:intercept-url pattern="/**" access="denyAll" />
+		<security:form-login login-page="/login"
+			authentication-failure-url="/login?error=true" />
+		<security:logout logout-success-url="/loggedout" />
+		<security:access-denied-handler
+			error-page="/denied" />
+
+		<security:remember-me user-service-ref="jdbcUserService" />
+	</security:http>
+
+	<security:global-method-security
+		secured-annotations="enabled"></security:global-method-security>
+
+	<bean id="passwordEncoder"
+		class="org.springframework.security.crypto.password.StandardPasswordEncoder">
+	</bean>
+</beans>
