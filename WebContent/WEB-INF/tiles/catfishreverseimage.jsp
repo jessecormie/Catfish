@@ -46,7 +46,7 @@
 			<legend align="center">
 				Select the Images where you see the Suspect <a href="#"
 					data-toggle="popover"
-					data-content="These are images that we found online that are visually similar to the image you uploaded. Selecting with images which the suspected catfish is in will help us determine a probability for you!"
+					data-content="These are images that we found online that are visually similar to the image you uploaded. Selecting the images that the suspected catfish is in will help us determine a probability for you!"
 					data-html="true"><span
 					class="glyphicon glyphicon-question-sign"></span></a>
 			</legend>

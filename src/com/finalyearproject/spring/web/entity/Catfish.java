@@ -14,27 +14,11 @@ public class Catfish {
 	private String age;
 	private String gender;
 	private String location;
-	private String homePhone;
-	private String mobilePhone;
 	private String facebook;
+	private String phone;
 	private Object metadataDate;
 	private double metadataLat;
 	private double metadataLong;
-
-	// fc
-	private String children;
-	private String maritalStatus;
-	private List<Organization> fcJob;
-	private List<Photo> fcPhotos;
-	private List<SocialProfile> fcSocialProfiles;
-	private double likely;
-
-	// pipl
-	private String piplJob;
-	private String piplImage;
-	private String piplUrl;
-	private String phone;
-	private Relationship piplRelations;
 
 	// reverse image search
 	private List<String> reverseImagePics;
@@ -43,14 +27,9 @@ public class Catfish {
 	public Catfish() {
 
 	}
-	
-	
 
-	public Catfish(String firstName, String lastName, String age, String gender, String location, String homePhone,
-			String mobilePhone, String facebook, Object metadataDate, double metadataLat, double metadataLong,
-			String children, String maritalStatus, List<Organization> fcJob, List<Photo> fcPhotos,
-			List<SocialProfile> fcSocialProfiles, double likely, String piplJob, String piplImage, String piplUrl,
-			String phone, Relationship piplRelations, List<String> reverseImagePics,
+	public Catfish(String firstName, String lastName, String age, String gender, String location, String facebook,
+			String phone, Object metadataDate, double metadataLat, double metadataLong, List<String> reverseImagePics,
 			List<String> reverseImageWebsites) {
 		super();
 		this.firstName = firstName;
@@ -58,52 +37,30 @@ public class Catfish {
 		this.age = age;
 		this.gender = gender;
 		this.location = location;
-		this.homePhone = homePhone;
-		this.mobilePhone = mobilePhone;
 		this.facebook = facebook;
+		this.phone = phone;
 		this.metadataDate = metadataDate;
 		this.metadataLat = metadataLat;
 		this.metadataLong = metadataLong;
-		this.children = children;
-		this.maritalStatus = maritalStatus;
-		this.fcJob = fcJob;
-		this.fcPhotos = fcPhotos;
-		this.fcSocialProfiles = fcSocialProfiles;
-		this.likely = likely;
-		this.piplJob = piplJob;
-		this.piplImage = piplImage;
-		this.piplUrl = piplUrl;
-		this.phone = phone;
-		this.piplRelations = piplRelations;
 		this.reverseImagePics = reverseImagePics;
 		this.reverseImageWebsites = reverseImageWebsites;
 	}
-
-
 
 	public List<String> getReverseImagePics() {
 		return reverseImagePics;
 	}
 
-
-
 	public void setReverseImagePics(List<String> reverseImagePics) {
 		this.reverseImagePics = reverseImagePics;
 	}
-
-
 
 	public List<String> getReverseImageWebsites() {
 		return reverseImageWebsites;
 	}
 
-
-
 	public void setReverseImageWebsites(List<String> reverseImageWebsites) {
 		this.reverseImageWebsites = reverseImageWebsites;
 	}
-
-
 
 	public Object getMetadataDate() {
 		return metadataDate;
@@ -135,30 +92,6 @@ public class Catfish {
 
 	public void setFacebook(String facebook) {
 		this.facebook = facebook;
-	}
-
-	public String getHomePhone() {
-		return homePhone;
-	}
-
-	public void setHomePhone(String homePhone) {
-		this.homePhone = homePhone;
-	}
-
-	public String getMobilePhone() {
-		return mobilePhone;
-	}
-
-	public void setMobilePhone(String mobilePhone) {
-		this.mobilePhone = mobilePhone;
-	}
-
-	public Relationship getPiplRelations() {
-		return piplRelations;
-	}
-
-	public void setPiplRelations(Relationship piplRelations) {
-		this.piplRelations = piplRelations;
 	}
 
 	public String getFirstName() {
@@ -201,78 +134,6 @@ public class Catfish {
 		this.location = location;
 	}
 
-	public String getChildren() {
-		return children;
-	}
-
-	public void setChildren(String children) {
-		this.children = children;
-	}
-
-	public String getMaritalStatus() {
-		return maritalStatus;
-	}
-
-	public void setMaritalStatus(String maritalStatus) {
-		this.maritalStatus = maritalStatus;
-	}
-
-	public List<Organization> getFcJob() {
-		return fcJob;
-	}
-
-	public void setFcJob(List<Organization> fcJob) {
-		this.fcJob = fcJob;
-	}
-
-	public List<Photo> getFcPhotos() {
-		return fcPhotos;
-	}
-
-	public void setFcPhotos(List<Photo> fcPhotos) {
-		this.fcPhotos = fcPhotos;
-	}
-
-	public List<SocialProfile> getFcSocialProfiles() {
-		return fcSocialProfiles;
-	}
-
-	public void setFcSocialProfiles(List<SocialProfile> fcSocialProfiles) {
-		this.fcSocialProfiles = fcSocialProfiles;
-	}
-
-	public double getLikely() {
-		return likely;
-	}
-
-	public void setLikely(double likely) {
-		this.likely = likely;
-	}
-
-	public String getPiplJob() {
-		return piplJob;
-	}
-
-	public void setPiplJob(String piplJob) {
-		this.piplJob = piplJob;
-	}
-
-	public String getPiplImage() {
-		return piplImage;
-	}
-
-	public void setPiplImage(String piplImage) {
-		this.piplImage = piplImage;
-	}
-
-	public String getPiplUrl() {
-		return piplUrl;
-	}
-
-	public void setPiplUrl(String piplUrl) {
-		this.piplUrl = piplUrl;
-	}
-
 	public String getPhone() {
 		return phone;
 	}
@@ -280,4 +141,5 @@ public class Catfish {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
+
 }
